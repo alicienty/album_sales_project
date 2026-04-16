@@ -1,0 +1,41 @@
+# Data manipulation
+pandas==2.1.0
+numpy==1.24.3
+
+# Preprocessing & Feature Engineering
+scikit-learn==1.3.0
+scipy==1.11.3
+imbalanced-learn==0.11.0  # для KNN Imputer
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.17.0
+
+# Machine Learning Models
+scikit-learn==1.3.0  # Linear Regression, Random Forest, SVM
+xgboost==2.0.0
+catboost==1.2.0
+lightgbm==4.1.0
+
+# Model evaluation & tuning
+optuna==3.3.0  # для гиперпараметров
+boruta==0.3  # для отбора признаков (альтернатива: использовать из scikit-learn)
+
+# Interpretation
+shap==0.42.1
+lime==0.2.0.1
+interpret==0.4.0
+eli5==0.13.0
+
+# Jupyter
+jupyter==1.0.0
+ipykernel==6.25.0
+
+# Utilities
+python-dotenv==1.0.0  # для работы с .env файлами (API ключи)
+tqdm==4.66.1  # для прогресс-баров
+joblib==1.3.2  # для сохранения моделей
+
+# Testing
+pytest==7.4.3
