@@ -88,8 +88,7 @@ spotify-track-popularity-prediction/
 │   └── results_with_text.csv          # Результаты (числовые + текст)
 │
 └── data/                              # Данные (не коммитятся)
-    ├── df_meta_ml.csv                 # Основные данные
-    └── lyrics_*.csv                   # Данные с текстами песен
+    └── lyrics_11k.csv                   # Данные с текстами песен
 ```
 
 ---
@@ -120,7 +119,7 @@ pip install -r requirements.txt
 
 ### 4. Настройка данных
 
-Поместите файл с данными (например, `df_meta_ml.csv` или `lyrics_SEX_10k.csv`) в корневую папку проекта.
+Поместите файл с данными (например, `df_meta_ml.csv` или `lyrics_10k.csv`) в корневую папку проекта.
 
 ---
 
@@ -164,7 +163,7 @@ python train.py
 ### 3. Интерпретация моделей (SHAP + LIME)
 
 ```bash
-python interpret.py df_meta_ml.csv best_model.pkl false reports/figures 1500 20
+python interpret.py df_meta_ml.csv best_model.pkl false reports/figures 2000 20
 ```
 
 **Параметры:**
@@ -174,15 +173,6 @@ python interpret.py df_meta_ml.csv best_model.pkl false reports/figures 1500 20
 4. `output_dir` — папка для сохранения графиков
 5. `sample_size` — максимальное число строк для ускорения (по умолчанию 1000)
 6. `top_k` — число признаков для отображения (по умолчанию 20)
-
-**Примеры:**
-```bash
-# Для модели без текста
-python interpret.py df_meta_ml.csv best_model_numeric.pkl false reports/figures
-
-# Для модели с текстом
-python interpret.py df_meta_ml.csv best_model_text.pkl true reports/figures_text
-```
 
 В папке `reports/figures/` появятся:
 - `shap_summary_*.png` — глобальная важность признаков
@@ -219,7 +209,13 @@ python interpret.py df_meta_ml.csv best_model_text.pkl true reports/figures_text
 
 ### Эксперимент 2: Числовые + текстовые эмбеддинги
 
-*(результаты будут добавлены после завершения обучения)*
+| Модель | MSE | RMSE | MAE | R² |
+| :--- | :---: | :---: | :---: | :---: |
+| **Linear Regression** | 233.3992 | 15.2774 | 12.0146 | 0.0882 |
+| **Random Forest** | 215.5949 | 14.6832 | 11.6904 | 0.1577 |
+| **SVM** | 221.2485 | 14.8744 | 11.3364 | 0.1357 |
+| **XGBoost** | 213.0030 | 14.5946 | 11.5677 | 0.1679 |
+| **CatBoost** | 209.3873 | 14.4702 | 11.4641 | 0.1820 |
 
 ---
 
@@ -235,10 +231,6 @@ python interpret.py df_meta_ml.csv best_model_text.pkl true reports/figures_text
 ### LIME (Local Interpretable Model-agnostic Explanations)
 - Объяснение конкретных предсказаний
 - Агрегированная важность признаков по нескольким примерам
-
-### Ключевые выводы из интерпретации
-
-(будут добавлены после запуска `interpret.py`)
 
 ---
 
