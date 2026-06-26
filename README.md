@@ -242,7 +242,7 @@ python interpret.py df_meta_ml.csv best_model.pkl false reports/figures 2000 20
 
 
 **DeepSeek** — для:
-   - Генерации структуры проекта и архитектуры
+   - Генерации чернового варианта структуры проекта
    - Написания шаблонов кода для preprocess.py, train.py, interpret.py
    - Отладки ошибок и оптимизации кода
    - Создания документации и README
