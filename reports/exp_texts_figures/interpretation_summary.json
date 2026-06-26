@@ -1,0 +1,14 @@
+{
+  "model": "CatBoostRegressor",
+  "features_used": 791,
+  "train_size": 2000,
+  "test_size": 1000,
+  "use_text": true,
+  "shap_top5": [
+    "lyrics_word_count",
+    "track_number",
+    "duration_ms",
+    "instrumentalness",
+    "lyrics_line_count"
+  ]
+}
