@@ -74,7 +74,6 @@ spotify-track-popularity-prediction/
 │   ├── best_model_numeric.pkl         # Лучшая модель (числовые признаки)
 │   ├── best_model_text.pkl            # Лучшая модель (числовые + текст)
 │   ├── scaler.pkl                     # Масштабатор числовых признаков
-│   ├── imputer.pkl                    # Импутер для пропусков
 │   ├── embedder.pkl                   # Модель эмбеддингов
 │   └── feature_names.pkl              # Список признаков
 │
