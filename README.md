@@ -88,8 +88,11 @@ spotify-track-popularity-prediction/
 │   ├── results_numeric_only.csv       # Результаты (числовые признаки)
 │   └── results_with_text.csv          # Результаты (числовые + текст)
 │
-└── data/                              # Данные (не коммитятся)
-    └── lyrics_11k.csv                   # Данные с текстами песен
+└── data/                              # Обработка данных
+    └── lyrics_11k.csv                 # Данные с текстами песен (не загружены)
+    ├── EDA_kpop.ipynb                 # EDA
+    ├── data.ipynb                     # Создание и фильтрация датасета
+    └── genuis_parser.ipynb            # Парсинг текстов песен
 ```
 
 ---
